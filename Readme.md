@@ -13,19 +13,19 @@
 
 ## 🚀 Etapas
 
-[x] [Criar chave ssh para o projeto](./keys/)
-[x] [Criar um vagrantifile para subir dois servidores para o Haproxy e dois para o Webserver com Nginx](./vagrantfile)
-[x] [Criar playbook para automatizar as seguintes tarefas]
-    [x][Configuração dos Hosts](./roles/configure_hosts/)
-        [x] Instalar docker
-        [x] Instalar containerd
-        [x] Criar usuários e grupos
-        [x] Jogar a chave ssh pública do usuárion para dentro da vm
-    [x][Instalar e configurar 2 webserver Nginx](./roles/configure_webserver/)
-        [x] Criar arquivo ngin.conf simples
-        [x] Criar um index.html simples
-    [x][Instalar e Configurar o Haproxy]
-    [x][Instalar e configurar o Keepalived]
+- [x] [Criar chave ssh para o projeto](./keys/)
+- [x] [Criar um vagrantifile para subir dois servidores para o Haproxy e dois para o Webserver com Nginx](./vagrantfile)
+- [x] [Criar playbook para automatizar as seguintes tarefas]
+    - [x][Configuração dos Hosts](./roles/configure_hosts/)
+        - [x] Instalar docker
+        - [x] Instalar containerd
+        - [x] Criar usuários e grupos
+        - [x] Jogar a chave ssh pública do usuárion para dentro da vm
+    - [x][Instalar e configurar 2 webserver Nginx](./roles/configure_webserver/)
+        - [x] Criar arquivo ngin.conf simples
+        - [x] Criar um index.html simples
+    - [x][Instalar e Configurar o Haproxy]
+    - [x][Instalar e configurar o Keepalived]
 
 ## 🚀 Etapas
 
