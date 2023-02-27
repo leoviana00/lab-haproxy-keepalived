@@ -32,19 +32,19 @@
 1. Role para configuração dos Hosts
 
 ```bash
-ansible-playbook -i inventory/virtualbox.yaml site.yaml --tags configure
+ansible-playbook -i inventory/virtualbox.yaml site.yaml --tags setup
 ```
 
 2. Role para instalação e configuração dos webservers
 
 ```bash
-ansible-playbook -i inventory/virtualbox.yaml site.yaml --tags configure
+ansible-playbook -i inventory/virtualbox.yaml site.yaml --tags web
 ```
 
 3. Role para Instalação/configurar do Haproxy
 
 ```bash
-ansible-playbook -i inventory/virtualbox.yaml site.yaml --tags configure
+ansible-playbook -i inventory/virtualbox.yaml site.yaml --tags install
 ```
 
 4. Role para configurar o haproxy e instalar/configura o Keepalived
