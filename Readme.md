@@ -54,5 +54,6 @@ ansible-playbook -i inventory/virtualbox.yaml site.yaml --tags configure
 ```
 
 ## 📄 Licença
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 🙇 Referências
