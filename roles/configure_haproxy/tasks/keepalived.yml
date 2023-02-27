@@ -1,0 +1,22 @@
+---
+- name: Mover script master.sh
+  copy:
+    src: files/scripts/master.sh
+    dest: /etc/keepalived/master.sh
+    mode: 0755
+
+- name: Mover keepalived para master
+  template:
+    src: keepalive/keepalived-master.conf.j2
+    dest: /etc/keepalived/keepalived.conf
+  when:
+    - virtual_ip 
+    - inventory_hostname in groups.loadbalancer[0]
+
+- name: Mover keepalived para slave
+  template:
+    src: keepalive/keepalived-slave.conf.j2
+    dest: /etc/keepalived/keepalived.conf
+  when:
+    - virtual_ip 
+    - not inventory_hostname in groups.loadbalancer[0]

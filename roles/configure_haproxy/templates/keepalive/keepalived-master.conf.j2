@@ -1,0 +1,47 @@
+#{{ ansible_managed}}
+
+global_defs {
+   notification_email {
+    root@cluster-harbor
+   }
+   notification_email_from root@cluster-harbor
+   smtp_server 127.0.0.1
+   smtp_connect_timeout 30
+   router_id LVS_DEVEL
+   enable_script_security
+   script_user root
+}
+
+vrrp_script chk_haproxy {
+  script "/usr/bin/pgrep haproxy"
+  interval 2 # every 2 seconds
+  weight 2 # add 2 points if OK
+}
+
+vrrp_instance VI_1 {
+    state MASTER
+    interface eth0
+    virtual_router_id 51
+    priority 101
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    unicast_src_ip {{ hostvars[inventory_hostname].ansible_facts[network_interface].ipv4.address }}
+    unicast_peer {
+      {% for server in groups.loadbalancer %}
+        {% if inventory_hostname not in server %}
+        {{ hostvars[server].ansible_facts[network_interface].ipv4.address }}
+        {% endif %}
+      {% endfor %}
+    }
+    virtual_ipaddress {
+      {{ loadbalancer_virtual_ip }}
+    }
+    track_script {
+    chk_haproxy
+  }
+
+  notify_master /etc/keepalived/master.sh
+}

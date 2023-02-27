@@ -1,0 +1,34 @@
+---
+
+- include_tasks: keepalived.yml
+
+- name: Criar diretório dos arquivos
+  file:
+    path: /etc/haproxy
+    state: directory
+
+- name: Mover template de haproxy conf file
+  template:
+    src: haproxy/haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    remote_src: false
+
+- name: Checar haproxy
+  command: haproxy -c -f /etc/haproxy/haproxy.cfg
+  register: check_result
+
+- name: Copiar servico
+  copy:
+    src: haproxy.service
+    dest: /lib/systemd/system/haproxy.service
+
+- name: Restart systemd
+  systemd:
+    daemon-reload: true
+
+- name: Restart services
+  when: '"Configuration file is valid" in check_result.stdout'
+  command: echo Restartando
+  notify:
+    - Restartar haproxy
+    - Restartar keepalived

@@ -1,0 +1,1 @@
+## Role para instalação do haproxy

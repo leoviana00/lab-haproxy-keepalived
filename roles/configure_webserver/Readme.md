@@ -1,0 +1,1 @@
+## Role para a configuração do Webserver Nginx

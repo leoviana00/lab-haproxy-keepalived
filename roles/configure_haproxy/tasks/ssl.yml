@@ -1,0 +1,17 @@
+---
+- name: Criar pasta para certificados
+  file:
+    state: directory
+    path: /etc/ssl
+
+- name: Mover pem para /etc/ssl
+  copy:
+    src: "certs/{{ambiente}}/domain.pem"
+    dest: "/etc/ssl/{{ambiente}}.pem"
+    remote_src: false
+
+- name: Mover certificados do keycloak
+  copy:
+    src: "certs/{{ambiente}}/login.{{ambiente}}.grupomateus.com.br.pem"
+    dest: "/etc/ssl/certs/login.{{ambiente}}.grupomateus.com.br.pem"
+    remote_src: false
