@@ -18,8 +18,7 @@
   <img alt="k8s" src="images/haproxy-keepalived.png">
 </p>
 
-## 🌱 Project
-
+## 🌱 Projeto
 - Loadbalancer com Haproxy
 
 ## ✨ Tecnologias
