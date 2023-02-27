@@ -1,4 +1,4 @@
-<h1 align="center">Harbor</h1>
+<h1 align="center">Haproxy e Keepalived</h1>
 
 <p align="center">
   <img alt="Haproxy" src="https://img.shields.io/static/v1?label=Haproxy&message=Keepalived&color=8257E5&labelColor=000000"  />
