@@ -1,8 +1,28 @@
+<h1 align="center">Harbor</h1>
+
+<p align="center">
+  <img alt="Haproxy" src="https://img.shields.io/static/v1?label=Haproxy&message=Keepalived&color=8257E5&labelColor=000000"  />
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
+
+<p align="center">
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-ambiente">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-etapas">Etapas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licença">Licença</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-referências">Referências</a>
+</p>
+
+<p align="center">
+  <img alt="k8s" src="images/haproxy-keepalived.png">
+</p>
+
 ## 🌱 Project
 
 - Loadbalancer com Haproxy
 
-## ✨ Ferramentas utilizadas
+## ✨ Tecnologias
 
 - Virtualbox
 - Vagrant
@@ -11,7 +31,7 @@
 - Keepalived
 - Nginx
 
-## 🚀 Etapas
+## 🗒 Ambiente
 
 - [x] [Criar chave ssh para o projeto](./keys/)
 - [x] [Criar um vagrantifile para subir dois servidores para o Haproxy e dois para o Webserver com Nginx](./vagrantfile)
